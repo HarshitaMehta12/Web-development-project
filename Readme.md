@@ -1,4 +1,4 @@
-# Study Planner + Pomodoro (No API)
+# Study Planner + Pomodoro
 
 Single-page Study Planner with a Pomodoro timer. Uses plain HTML/CSS/JS and `localStorage` — **no external APIs or network requests**.
 
@@ -16,3 +16,4 @@ How to run:
 3. (Optional) Push to GitHub — it's just static files.
 
 License: MIT — modify and share freely.
+
