@@ -10,10 +10,6 @@ Features:
 - Light/dark theme toggle
 - Responsive & accessible
 
-How to run:
-1. Clone or download the folder.
-2. Open `index.html` in any modern browser.
-3. (Optional) Push to GitHub — it's just static files.
 
-License: MIT — modify and share freely.
+
 
