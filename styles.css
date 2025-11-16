@@ -1,0 +1,43 @@
+:root{
+  --bg:#f7f8fb; --card:#ffffff; --text:#111827; --muted:#6b7280; --accent:#06b6d4;
+  --shadow: 0 6px 18px rgba(11,12,16,0.06);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg)}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:linear-gradient(90deg, #eef2ff, var(--bg));border-bottom:1px solid rgba(0,0,0,0.03)}
+.topbar h1{margin:0;font-size:1.25rem}
+.muted{color:var(--muted)}
+.container{display:flex;gap:20px;padding:20px;max-width:1100px;margin:18px auto}
+.left{flex:1}
+.right{width:340px;display:flex;flex-direction:column;gap:18px}
+.card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.row{display:flex;align-items:center;gap:8px;margin-top:10px}
+.row.spaced{justify-content:space-between}
+.row.small{gap:10px;font-size:0.9rem}
+input[type="text"],input[type="number"],textarea,select{width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9ef;background:transparent}
+textarea{min-height:64px;resize:vertical}
+.btn{background:var(--accent);color:white;padding:8px 12px;border-radius:10px;border:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid #e6e9ef}
+.controls button{background:transparent;border:none;font-size:1.05rem;cursor:pointer}
+.task-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.task{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;border:1px solid #eef2f3}
+.task .info{flex:1;margin-left:10px}
+.task h3{margin:0;font-size:1rem}
+.task p{margin:4px 0 0;font-size:0.9rem;color:var(--muted)}
+.task .meta{display:flex;gap:8px;align-items:center;font-size:0.85rem;color:var(--muted)}
+.timer-card .timer-display{font-size:2.5rem;text-align:center;padding:12px 0}
+.stat-row{display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed #f1f5f9}
+.footer{text-align:center;padding:12px;color:var(--muted);font-size:0.9rem}
+
+/* dark theme */
+.dark{
+  --bg:#0b1220; --card:#07122a; --text:#e6eef8; --muted:#9fb0c8; --accent:#06b6d4; --shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+/* responsive */
+@media(max-width:900px){
+  .container{flex-direction:column;padding:12px}
+  .right{width:100%}
+}
+.small{font-size:0.85rem}

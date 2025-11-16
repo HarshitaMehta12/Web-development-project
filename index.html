@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Study Planner & Pomodoro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Study Planner<span class="muted"> + Pomodoro</span></h1>
+    <div class="controls">
+      <button id="toggleTheme" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <form id="taskForm" class="card" aria-label="Add a new task">
+        <h2>Add Task</h2>
+        <input id="title" placeholder="Task title (e.g., Read OS chapter)" required />
+        <textarea id="notes" placeholder="Notes (optional)"></textarea>
+        <div class="row">
+          <input id="duration" type="number" min="5" max="240" value="25" required />
+          <label for="duration">mins (suggested pomodoro length)</label>
+        </div>
+        <div class="row spaced">
+          <button type="submit" class="btn">Add</button>
+          <button type="button" id="clearAll" class="btn ghost">Clear All</button>
+        </div>
+      </form>
+
+      <section id="tasks" class="card">
+        <h2>Tasks</h2>
+        <div id="taskList" class="task-list" aria-live="polite"></div>
+        <div class="row spaced small">
+          <select id="filter">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="done">Done</option>
+          </select>
+          <input id="search" placeholder="Search tasks..." />
+        </div>
+      </section>
+    </section>
+
+    <aside class="right">
+      <section class="card timer-card" aria-label="Pomodoro timer">
+        <h2>Pomodoro Timer</h2>
+        <div class="timer-display" id="timerDisplay">25:00</div>
+
+        <div class="row spaced small">
+          <div>
+            <label>Work</label>
+            <input id="workInput" type="number" min="5" max="120" value="25" /> mins
+          </div>
+          <div>
+            <label>Break</label>
+            <input id="breakInput" type="number" min="1" max="30" value="5" /> mins
+          </div>
+        </div>
+
+        <div class="row spaced">
+          <button id="startBtn" class="btn">Start</button>
+          <button id="pauseBtn" class="btn ghost">Pause</button>
+          <button id="resetBtn" class="btn ghost">Reset</button>
+        </div>
+
+        <div class="row small">
+          <label><input id="autoSwitch" type="checkbox" /> Auto-switch sessions</label>
+          <label><input id="sound" type="checkbox" checked /> Sound</label>
+        </div>
+
+        <div id="sessionInfo" class="muted small">Session: Work</div>
+      </section>
+
+      <section class="card stats-card">
+        <h2>Stats</h2>
+        <div class="stat-row"><strong id="totalTasks">0</strong><span>Total tasks</span></div>
+        <div class="stat-row"><strong id="completedTasks">0</strong><span>Completed</span></div>
+        <div class="stat-row"><strong id="pomodorosDone">0</strong><span>Pomodoros completed</span></div>
+      </section>
+
+      <section class="card about-card">
+        <h3>About</h3>
+        <p>Offline study planner with a built-in Pomodoro timer. Data saved in your browser.</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <small>Made with ♥ — No APIs, just localStorage</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
